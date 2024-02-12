@@ -1,0 +1,86 @@
+/*
+  CSS Reset
+  heavily inspired by https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/*
+  Theme
+*/
+
+html {
+  font: 22px system-ui, sans-serif;
+}
+
+body {
+  color-scheme: dark;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  background-size: cover;
+  background-image: url("https://app.fonepaw.fr/images/best-app/meilleures-apps-dj-pour-android.jpg");
+}
+
+/*
+  Components
+*/
+
+.pads {
+  height: 100%;
+  display: grid;
+}
+@media (max-width: 767.98px) {
+  .pads {
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-content: center;
+  }
+}
+@media (min-width: 768px) {
+  .pads {
+    max-width: 44rem;
+    padding: 3vw;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3vw;
+    align-content: center;
+  }
+}
+
+.pads > div {
+  border: .3rem solid #8b949e;
+  color: #ffffff;
+  font-size: 35px;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  aspect-ratio: 1;
+  font-weight: bold;
+  user-select: none;
+}
+
+.pads > div:hover {
+  color: #7ee787;
+  border-color: currentColor;
+}
+
+.active,
+.pads > div:active { /* lien activé */
+  border-color: transparent;
+  background-color: #7ee787;
+  color: #c7ccc9;
+  box-shadow: 0 0 2rem 0px #56d364;
+}
